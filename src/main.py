@@ -6,19 +6,27 @@ from tkinter import *
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def get_web():
-    web = str(web_input.get())
+    web = web_input.get()
     return web
 
 
 def get_email():
-    email = str(user_input.get())
+    email = user_input.get()
     return email
 
 
 def get_password():
-    password = str(password_input.get())
+    password = password_input.get()
     return password
 
+
+def save():
+    with open("data.txt", "r+b") as file:
+        web = get_web()
+        user = get_email()
+        password = get_password()
+        existing_text = str(file.readlines())
+        file.write(f"{existing_text} /n {web} | {user} | {password}")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -60,7 +68,7 @@ password_input.grid(row=4, column=1, columnspan=3)
 generate_btn = Button(text="Generate Password", width=14)
 generate_btn.grid(row=4, column=3)
 
-add_btn = Button(text="Add", width=36)
+add_btn = Button(text="Add", width=36, command=save)
 add_btn.grid(row=5, column=2, columnspan=2)
 
 window.mainloop()
