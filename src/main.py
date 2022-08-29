@@ -21,12 +21,14 @@ def get_password():
 
 
 def save():
-    with open("data.txt", "r+b") as file:
+    with open("data.txt", "a") as file:
         web = get_web()
         user = get_email()
         password = get_password()
-        existing_text = str(file.readlines())
-        file.write(f"{existing_text} /n {web} | {user} | {password}")
+        file.write(f"{web} | {user} | {password}")
+        web_input.delete(0, END)
+        password_input.delete(0, END)
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
