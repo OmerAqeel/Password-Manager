@@ -21,18 +21,32 @@ def get_password():
 
 
 def save():
+    global confirmed
     web = get_web()
     user = get_email()
     password = get_password()
-    confirmed = messagebox.askokcancel(title="Confirmation", message=f"Can you please confirm that the details are correct ? \nWebsite: "
+    info_missing = False
+    if len(web) == 0:
+        messagebox.showinfo(title="Info missing", message="Please enter the website.")
+        info_missing = True
+    elif len(user) == 0:
+        messagebox.showinfo(title="Info missing", message="Please enter the email address.")
+        info_missing = True
+    elif len(password) == 0:
+        messagebox.showinfo(title="Info missing", message="Please enter the password.")
+        info_missing = True
+    if info_missing == False:
+        confirmed = messagebox.askokcancel(title="Confirmation", message=f"Can you please confirm that the details are correct ? \nWebsite: "
                                                       f"{web} \nEmail: {user} \nPassword: {password}")
+
     if confirmed:
         with open("data.txt", "a") as file:
             file.write(f"{web} | {user} | {password}\n")
             web_input.delete(0, END)
             password_input.delete(0, END)
-        
-    
+
+
+
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
