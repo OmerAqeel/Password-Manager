@@ -89,4 +89,4 @@ generate_btn.grid(row=4, column=3)
 add_btn = Button(text="Add", width=36, command=save)
 add_btn.grid(row=5, column=2, columnspan=2)
 
-window.mainloop(
+window.mainloop()
