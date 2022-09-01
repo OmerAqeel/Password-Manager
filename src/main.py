@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -26,6 +27,13 @@ def save():
     user = get_email()
     password = get_password()
     info_missing = False
+    new_data = {
+        web: {
+            "email": user,
+            "password": password,
+        }
+    }
+
     if len(web) == 0:
         messagebox.showinfo(title="Info missing", message="Please enter the website.")
         info_missing = True
@@ -41,7 +49,7 @@ def save():
 
     if confirmed:
         with open("data.txt", "a") as file:
-            file.write(f"{web} | {user} | {password}\n")
+            json.dump(new_data, file)       # dumping the data into the file (data.txt)
             web_input.delete(0, END)
             password_input.delete(0, END)
 
