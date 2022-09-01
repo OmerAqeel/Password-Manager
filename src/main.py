@@ -56,7 +56,7 @@ def save():
             data.update(new_data)
         with open("data.json", "w") as file:
             # Saving the data to the data.json
-            json.dump(new_data, file)  # dumping the data into the file (data.txt)
+            json.dump(new_data, file, indent = 4)  # dumping the data into the file (data.txt)
             web_input.delete(0, END)
             password_input.delete(0, END)
 
