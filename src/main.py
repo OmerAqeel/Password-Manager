@@ -48,7 +48,7 @@ def save():
                                                       f"{web} \nEmail: {user} \nPassword: {password}")
 
     if confirmed:
-        with open("data.txt", "a") as file:
+        with open("data.json", "a") as file:
             json.dump(new_data, file)       # dumping the data into the file (data.txt)
             web_input.delete(0, END)
             password_input.delete(0, END)
