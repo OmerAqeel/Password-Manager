@@ -70,23 +70,23 @@ password_label.grid(row=4, column=1)
 
 # Inputs
 
-web_input = Entry(width=35)
+web_input = Entry(width=21)
 web_input.focus()  # As soon as the program is ran the cursor will be on the website entry.
-web_input.grid(row=2, column=2, columnspan=2)
+web_input.grid(row=2, column=1, columnspan=3)
 
 user_input = Entry(width=35)
 user_input.insert(0, "omrraqeel@gmail.com")
 user_input.grid(row=3, column=2, columnspan=2)
 
-password_input = Entry(width=21)
-password_input.grid(row=4, column=1, columnspan=3)
+password_input = Entry(width=35)
+password_input.grid(row=4, column=2, columnspan=2)
 
 # Buttons
 
-generate_btn = Button(text="Generate Password", width=14)
-generate_btn.grid(row=4, column=3)
-
 add_btn = Button(text="Add", width=36, command=save)
 add_btn.grid(row=5, column=2, columnspan=2)
+
+search_btn = Button(text="Search", width="14")
+search_btn.grid(row=2, column=3, columnspan=2)
 
 window.mainloop()
