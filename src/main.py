@@ -3,8 +3,8 @@ from tkinter import messagebox
 import json
 
 def findPassword():
-    website = web_input.get()
-    try:
+    website = web_input.get()       # Getting the text from the entry (web_input)
+    try:                            # Trying the below line of code to get the data (content) from data.json file
         with open("data.json") as file:
             data = json.load(file)
     except FileNotFoundError:
