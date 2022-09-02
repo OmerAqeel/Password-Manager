@@ -7,8 +7,8 @@ def findPassword():
     try:                            # Trying the below line of code to get the data (content) from data.json file
         with open("data.json") as file:
             data = json.load(file)
-    except FileNotFoundError:
-        messagebox.showinfo(title="Error", message="No data file found.")
+    except FileNotFoundError:       # if the program faces FileNotFoundError 
+        messagebox.showinfo(title="Error", message="No data file found.")   # Display the error message to the user 
     else:
         if website not in data:     # If the user entered a website that was not in the data.json file then follow the below code
             messagebox.showinfo(title="Information Missing", message="This website password is not in the data file, please click add to add it. ")
