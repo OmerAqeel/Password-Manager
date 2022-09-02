@@ -10,19 +10,12 @@ def findPassword():
     except FileNotFoundError:
         messagebox.showinfo(title="Error", message="No data file found.")
     else:
-        if website not in data:
+        if website not in data:     # If the user entered a website that was not in the data.json file then follow the below code
             messagebox.showinfo(title="Information Missing", message="This website password is not in the data file, please click add to add it. ")
-        if website in data:
-            email = data[website]["email"]
+        if website in data:         # If the website is included in the data.json file than 
+            email = data[website]["email"] 
             password = data[website]["password"]
             messagebox.showinfo(title=f"{website}", message=f"email: {email}\n password: {password}")
-
-
-
-
-
-
-# ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def get_web():
     web = web_input.get()
