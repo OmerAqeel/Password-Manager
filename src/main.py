@@ -5,11 +5,13 @@ import json
 def findPassword():
     website = web_input.get()
     try:
-        with open("data.json", "r") as file:
+        with open("data.json") as file:
             data = json.load(file)
     except FileNotFoundError:
         messagebox.showinfo(title="Error", message="No data file found.")
     else:
+        if website not in data:
+            messagebox.showinfo(title="Information Missing", message="This website password is not in the data file, please click add to add it. ")
         if website in data:
             email = data[website]["email"]
             password = data[website]["password"]
