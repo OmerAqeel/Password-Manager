@@ -4,12 +4,14 @@ import json
 
 def findPassword():
     website = web_input.get()
-    with open("data.json", "r") as file:
-        data = json.load(file)
-        if website in data:
-            email = data[website]["email"]
-            password = data[website]["password"]
-            messagebox.showinfo(title=f"{website}", message=f"email: {email}\n password: {password}")
+    try:
+        
+        with open("data.json", "r") as file:
+            data = json.load(file)
+            if website in data:
+                email = data[website]["email"]
+                password = data[website]["password"]
+                messagebox.showinfo(title=f"{website}", message=f"email: {email}\n password: {password}")
 
 
 
