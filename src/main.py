@@ -2,7 +2,18 @@ from tkinter import *
 from tkinter import messagebox
 import json
 
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def findPassword():
+    website = web_input.get()
+    with open("data.json", "r") as file:
+        data = json.load(file)
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            messagebox.showinfo(title=f"{website}", message=f"email: {email}\n password: {password}")
+
+
+
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
@@ -113,7 +124,7 @@ password_input.grid(row=4, column=2, columnspan=2)
 add_btn = Button(text="Add", width=36, command=save)
 add_btn.grid(row=5, column=2, columnspan=2)
 
-search_btn = Button(text="Search", width="14")
+search_btn = Button(text="Search", width="14", command=findPassword)
 search_btn.grid(row=2, column=3, columnspan=2)
 
 window.mainloop()
