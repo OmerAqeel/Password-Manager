@@ -48,15 +48,23 @@ def save():
                                                       f"{web} \nEmail: {user} \nPassword: {password}")
 
     if confirmed:
-        with open("data.json", "r") as file:
-            # json.dump(new_data, file)       # dumping the data into the file (data.txt)
-            # Reading the data
-            data = json.load(file)
-            # Updating the data
+        try:
+            with open("data.json", "r") as file:
+                # Reading the data
+                data = json.load(file)
+                # Updating the data
+                data.update(new_data)
+            with open("data.json", "w") as file:
+                # Saving the data to the data.json
+                json.dump(data, file, indent=4)  # dumping the data into the file (data.txt)
+                web_input.delete(0, END)
+                password_input.delete(0, END)
+        except FileNotFoundError:
+            file = open("data.json", "a")
+        else:
             data.update(new_data)
-        with open("data.json", "w") as file:
-            # Saving the data to the data.json
-            json.dump(data, file, indent=4)  # dumping the data into the file (data.txt)
+        except KeyError:
+            json.dump(new_data, file, indent=4)  # dumping the data into the file (data.txt)
             web_input.delete(0, END)
             password_input.delete(0, END)
 
