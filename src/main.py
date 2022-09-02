@@ -14,7 +14,7 @@ def findPassword():
             messagebox.showinfo(title="Information Missing", message="This website password is not in the data file, please click add to add it. ")
         if website in data:         # If the website is included in the data.json file than 
             email = data[website]["email"] 
-            password = data[website]["password"]
+            password = data[website]["password"] # Get the password 
             messagebox.showinfo(title=f"{website}", message=f"email: {email}\n password: {password}")
 
 def get_web():
