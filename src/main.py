@@ -63,8 +63,12 @@ def save():
             file = open("data.json", "a")
         else:
             data.update(new_data)
-        except KeyError:
-            json.dump(new_data, file, indent=4)  # dumping the data into the file (data.txt)
+
+            with open("data.json", "w") as file:
+                # Saving the data to the data.json
+                json.dump(data, file, indent=4)  # dumping the data into the file (data.txt)
+
+        finally:
             web_input.delete(0, END)
             password_input.delete(0, END)
 
