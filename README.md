@@ -9,11 +9,6 @@ The tkinter package is a thin object-oriented layer on top of Tcl/Tk. To use tki
 
 You can learn more about it in its documentation 👉 https://docs.python.org/3/library/tk.html
 
-### time
-This module provides various time-related functions. For related functionality, see also the datetime and calendar modules.
-
-You can learn more about it in its documentation 👉 https://docs.python.org/3/library/time.html
-
 ## Graphical User Interface (GUI)
 <img width="854" alt="Screenshot 2022-09-03 at 20 30 25" src="https://user-images.githubusercontent.com/93266569/188281945-504d76ee-f4de-45ee-bf2e-98b6ed7e95e7.png">
 
