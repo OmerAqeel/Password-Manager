@@ -10,7 +10,7 @@ The tkinter package is a thin object-oriented layer on top of Tcl/Tk. To use tki
 You can learn more about it in its documentation 👉 https://docs.python.org/3/library/tk.html
 
 ### time
-This module provides various time-related functions. For related functionality, see also the datetime and calendar modules.
+
 
 You can learn more about it in its documentation 👉 https://docs.python.org/3/library/time.html
 
