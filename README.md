@@ -5,7 +5,7 @@ Sometimes, we all face problem remembering our passwords for different websites,
 2) time
 3) random
 ### tkinter
-The turtle module provides turtle graphics primitives, in both object-oriented and procedure-oriented ways. Because it uses tkinter for the underlying graphics, it needs a version of Python installed with Tk support.
+The tkinter package is a thin object-oriented layer on top of Tcl/Tk. To use tkinter, you don’t need to write Tcl code, but you will need to consult the Tk documentation, and occasionally the Tcl documentation. tkinter is a set of wrappers that implement the Tk widgets as Python classes
 
 You can learn more about it in its documentation 👉 https://docs.python.org/3/library/turtle.html#turtle.done
 
